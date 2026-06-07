@@ -221,12 +221,13 @@ function pickAnswer(e){
     }else{
         selectedBtn.classList.add("incorrect");
     }
-    Array.from(optionBtnEl.children).forEach(button => {
-        if(button.dataset.correct === "true"){
-            button.classList.add("correct")
-        }
-        button.disabled = true;
-    });
+    // uncomment to show answer if option checked is wrong
+    // Array.from(optionBtnEl.children).forEach(button => {
+    //     if(button.dataset.correct === "true"){
+    //         button.classList.add("correct")
+    //     }
+    //     button.disabled = true;
+    // });
 
     
 
