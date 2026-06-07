@@ -22,7 +22,7 @@ const questions  = [
     },
 
     {
-        question : "How Presidents has been on seat since Independence?",
+        question : "How many Presidents has been on seat since Independence?",
         answers: [ 
             {text: "14", correct: true},
             {text : "16", correct: false},
@@ -210,17 +210,22 @@ function loadQuestion(){
     nextBtn.style.display = "none";
 }
 
+optionBtnEl.addEventListener("click", nextQuestion)
+
 function pickAnswer(e){
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
     if(isCorrect){
-        selectedBtn.classList.add("correct");
+        // to add class corrrect
+        // selectedBtn.classList.add("correct");
         score++;
         scoreEl.textContent = score;
        
-    }else{
-        selectedBtn.classList.add("incorrect");
     }
+    // else{
+    //     // selectedBtn.classList.add("incorrect");
+    // }
+
     // uncomment to show answer if option checked is wrong
     // Array.from(optionBtnEl.children).forEach(button => {
     //     if(button.dataset.correct === "true"){

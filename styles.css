@@ -78,13 +78,15 @@ p{
 
 }
 
-.correct{
+/* styles for correct and incorrect option  */
+
+/* .correct{
     background-color: green;
 }
 
 .incorrect{
     background-color: red;
-}
+} */
 
 #quiz-screen{
     padding: 0;
