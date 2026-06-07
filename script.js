@@ -1,3 +1,4 @@
+// questions and anwers
 const questions  = [
     {
         question : "What are the colors on the Nigeria's flag?",
@@ -102,6 +103,7 @@ const questions  = [
         },
 ]
 
+// Constants
 const startPage = document.getElementById("start-page");
 const startBtn = document.getElementById("start-btn");
 const restartBtn = document.getElementById("restart-btn")
@@ -121,12 +123,14 @@ const highScoreEl = document.getElementById("highscore");
 
 const userName = document.getElementById("username")
 
+// Variable for later use
 let timer;
 let timeLeft = 30;
 let currentQuestionIndex = 0;
 let score = 0;
 let highScore = localStorage.getItem("highScore") || 0;
 
+// Define Buttons
 startBtn.addEventListener("click", startQuiz);
 startBtn.addEventListener("click", () => {
     const userNameValue = userName.value;
@@ -136,6 +140,7 @@ startBtn.addEventListener("click", () => {
 restartBtn.addEventListener("click", homePage);
 nextBtn.addEventListener("click", nextQuestion);
 
+// function for homepage
 function homePage(){
     startPage.classList.remove("hidden");
     quizScreen.classList.add("hidden");
@@ -149,6 +154,7 @@ function homePage(){
      highScoreEl.textContent = highScore;
 }
 
+// function for quiz screen
 function startQuiz(){
 
     currentQuestionIndex = 0;
@@ -162,6 +168,7 @@ function startQuiz(){
     loadQuestion();
 }
 
+// function for Timer
 function startTimer(){
     clearInterval(timer);
 
@@ -176,6 +183,7 @@ function startTimer(){
         }
     }, 1000);
 }
+
 
 function loadQuestion(){
     startTimer();
@@ -193,7 +201,7 @@ function loadQuestion(){
         button.classList.add("option");
         button.classList.add("btn")
         optionBtnEl.appendChild(button);
-
+// what would happen when an option is clicked
         if(answer.correct){
             button.dataset.correct = answer.correct;
         }
@@ -261,6 +269,6 @@ function endQuiz(){
      else{
         resultMsg.textContent = "Try Again";
      }
-    //  highScoreEl.innerHTML = `${highScore}`;
+
 }
 
